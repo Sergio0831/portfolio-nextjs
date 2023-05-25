@@ -1,0 +1,39 @@
+@use './assets/styles/variables' as *;
+@use './assets/styles/mixins' as *;
+@use './assets/styles/breakpoints' as *;
+
+.section-center {
+	max-width: 120rem;
+	margin: 0 auto;
+	padding-left: $p-3;
+	padding-right: $p-3;
+}
+
+.section-title {
+	margin-bottom: $m-3 * 2;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.pt {
+	padding-top: 16rem;
+}
+
+.social {
+	font-size: $f-7 * 2;
+
+	&-link {
+		transition: $base-transition;
+		width: 4rem;
+
+		&:not(:last-child) {
+			margin-right: $m-1;
+		}
+
+		&-footer:hover {
+			color: $white;
+		}
+	}
+}

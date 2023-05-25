@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.about {
+	background-color: $bg-secondary;
+	padding: $p-3 0;
+
+	@include md {
+		padding: $p-4 * 2 0;
+	}
+
+	@include lg {
+		padding-bottom: 0;
+	}
+
+	&__info {
+		display: $d-grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 3fr;
+		align-items: $align-center;
+		gap: $g-4;
+		margin-bottom: $m-3;
+
+		@include sm {
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		@include lg {
+			margin-bottom: -10%;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+		}
+	}
+
+	&__image {
+		position: $p-relative;
+		height: $base-height;
+		align-self: $align-center;
+
+		@include lg {
+			height: $base-height / 2;
+			align-self: flex-start;
+		}
+	}
+
+	&__me {
+		p {
+			@include font($font-family-secondary, $font-weight-medium, $f-8);
+
+			line-height: 1.6;
+		}
+
+		p:first-child {
+			font-size: $f-6;
+		}
+	}
+
+	&__cards {
+		display: $d-grid;
+		grid-template-columns: 1fr;
+		gap: $g-3;
+		transform: translateY(0);
+
+		@include lg {
+			transform: translateY(50%);
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

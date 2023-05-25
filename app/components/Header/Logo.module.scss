@@ -1,0 +1,32 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.logo {
+	font: $f-2 $font-family-logo;
+	letter-spacing: 3px;
+	color: $text;
+	@include position($p-absolute, $top: 4rem, $left: 4rem);
+
+	a {
+		position: relative;
+		outline: none;
+
+		&::before {
+			content: '';
+			@include position($p-absolute, $bottom: 0, $left: 0);
+
+			width: 100%;
+			height: 1px;
+			background-color: $text;
+			transform: scaleX(0);
+			transform-origin: bottom right;
+			transition: transform $transition;
+		}
+
+		&:hover::before,
+		&:focus::before {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	}
+}

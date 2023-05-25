@@ -1,0 +1,94 @@
+// Colors
+$primary: #00bfb8;
+$primary-light: #27debf;
+$secondary: #ec813a;
+$text: #3a3c3f;
+$bg-primary: #efede4;
+$bg-secondary: #f0f5f8;
+$light: #f7f7f7;
+$white: #fff;
+$gradient: linear-gradient(-45deg, #7b42f6, #b01eff);
+
+// Font size
+$f-base: 1rem;
+$f-1: $f-base * 6;
+$f-2: $f-base * 4.8;
+$f-3: $f-base * 3.2;
+$f-4: $f-base * 3;
+$f-5: $f-base * 2.4;
+$f-6: $f-base * 2.2;
+$f-7: $f-base * 2;
+$f-8: $f-base * 1.8;
+$f-9: $f-base * 1.6;
+$f-10: $f-base * 1.4;
+
+// Font Family
+$font-family-primary: var(--font-family-primary);
+$font-family-secondary: var(--font-family-secondary);
+$font-family-logo: var(--font-family-logo);
+
+// Font Weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// Line height
+$line-height-base: 1.5;
+
+// Border Radius
+$rounded: 0.5rem;
+$circle: 50%;
+
+// Flex
+$align-center: center;
+$justify-center: center;
+$justify-between: space-between;
+$justify-end: end;
+$justify-start: start;
+$wrap: wrap;
+
+// Position
+$p-relative: relative;
+$p-absolute: absolute;
+$p-fixed: fixed;
+
+// Display
+$d-flex: flex;
+$d-grid: grid;
+$d-block: block;
+
+// Spaces
+// Padding
+$p-1: 1rem;
+$p-2: $p-1 * 2;
+$p-3: $p-1 * 3;
+$p-4: $p-1 * 4;
+$p-5: $p-1 * 5;
+$p-6: $p-1 * 6;
+
+// Margin
+$m-1: 1rem;
+$m-2: $m-1 * 2;
+$m-3: $m-1 * 3;
+$m-4: $m-1 * 4;
+$m-5: $m-1 * 5;
+$m-6: $m-1 * 6;
+
+// Gap
+$g-1: 1rem;
+$g-2: $g-1 * 2;
+$g-3: $g-1 * 3;
+$g-4: $g-1 * 4;
+$g-5: $g-1 * 5;
+$g-6: $g-1 * 6;
+
+// Width Heigh
+$base-width: 100%;
+$base-height: 100%;
+
+// Transition
+$transition: 300ms ease;
+
+// Opacity
+$opacity-value: 1;

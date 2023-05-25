@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints.scss' as *;
+@use 'sass:math';
+
+.card {
+	background-color: $light;
+	border-radius: $rounded;
+	padding: $p-2 $p-3;
+	text-align: $align-center;
+	transition: background-color $transition, color $transition,
+		box-shadow $transition;
+	@include card-shadow-2;
+
+	&__icon {
+		width: 3.2rem;
+		height: 3.2rem;
+	}
+
+	&__title {
+		@include font($font-family-primary, $font-weight-semi-bold, $f-8);
+
+		position: $p-relative;
+		padding-bottom: math.div($p-1, 2);
+		display: $d-flex;
+		justify-content: $justify-center;
+		margin: $m-1 0 $m-2;
+
+		&::before {
+			content: '';
+			bottom: 0;
+			position: $p-absolute;
+			width: 5rem;
+			height: 1px;
+			background-color: $primary;
+			transition: background-color $transition;
+		}
+	}
+
+	&__desc {
+		@include font($font-family-secondary, $font-weight-regular, $f-9);
+		text-align: left;
+	}
+
+	&:hover {
+		background-color: $primary;
+
+		@include card-shadow-1;
+
+		.card__title::before {
+			background-color: $white;
+		}
+	}
+
+	@include nonhover {
+		background-color: $light;
+		color: $text;
+
+		.card__title::before {
+			background-color: $primary;
+		}
+	}
+}

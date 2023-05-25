@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.nav {
+	@include position($p-fixed, $top: 0, $left: 0);
+	@include centered-grid(center);
+
+	z-index: -1500;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	transition: z-index 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+		opacity 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+	&__list {
+		text-align: $align-center;
+	}
+
+	&__item {
+		transform: translateY(100%);
+		transition: transform $transition, opacity $transition;
+		opacity: 0;
+		//visibility: hidden;
+		@include transition-delay-down;
+	}
+
+	.in {
+		transform: translateY(0);
+		opacity: $opacity-value;
+		//visibility: visible;
+		@include transition-delay-up;
+	}
+
+	&__link {
+		@include font($font-family-primary, $font-weight-semi-bold, $f-1);
+		color: $text;
+		padding: $p-1 $p-3 + 0.5;
+		margin: 5px;
+		border-radius: $rounded;
+		transition: transform $transition, box-shadow $transition, color $transition;
+		cursor: pointer;
+		text-transform: capitalize;
+		box-shadow: inset 0 0 0 0 $secondary;
+
+		&:hover:not(.active),
+		&:focus {
+			transform: translateX(1rem);
+			box-shadow: inset 35rem 0 0 0 $secondary;
+			color: $light;
+		}
+
+		@media only screen and (hover: none) {
+			transform: translateX(0);
+
+			.active {
+				transform: translateX(0);
+			}
+		}
+	}
+}
+
+.active {
+	transform: translateX(1rem);
+	box-shadow: inset 30rem 0 0 0 $secondary;
+	color: $light;
+}
+
+.show {
+	z-index: 1500;
+	opacity: $opacity-value;
+}

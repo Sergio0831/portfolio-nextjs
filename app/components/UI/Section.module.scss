@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.section {
+	// padding-bottom: $p-6;
+
+	&__title {
+		@include font($font-family-primary, $font-weight-semi-bold, $f-base * 4);
+		text-align: $align-center;
+		position: $p-relative;
+		margin-bottom: 3px;
+
+		&::before {
+			content: '';
+			margin: 0 auto;
+			position: $p-absolute;
+			width: 10rem;
+			height: 3px;
+			background-color: $primary;
+
+			@include absolute($bottom: 0, $left: 0, $right: 0);
+		}
+
+		@include sm {
+			font-size: $f-2;
+		}
+	}
+
+	&__subtitle {
+		@include font($font-family-secondary, $font-weight-regular, $f-5);
+		text-align: $align-center;
+		margin-bottom: $m-4;
+
+		@include lg {
+			margin-bottom: $m-4 * 2;
+		}
+	}
+
+	&__center {
+		max-width: 120rem;
+		margin: 0 auto;
+		padding-left: $p-3;
+		padding-right: $p-3;
+	}
+}

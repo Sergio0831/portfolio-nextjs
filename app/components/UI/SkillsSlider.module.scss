@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.slide {
+	background-color: $text;
+	border-radius: $rounded;
+	padding: $p-1 * 1.5;
+	margin: 0 $m-1;
+	cursor: pointer;
+	transition: transform $transition;
+	text-align: center;
+	user-select: none;
+
+	&:hover {
+		transform: scale(0.9);
+	}
+
+	svg {
+		margin-bottom: $m-1 * 1.5;
+		fill: $light;
+		width: 7.2rem;
+		height: 7.2rem;
+	}
+
+	p {
+		@include font($font-family-primary, $font-weight-semi-bold, $f-10);
+		color: $light;
+		letter-spacing: 1px;
+	}
+}

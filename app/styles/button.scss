@@ -1,0 +1,107 @@
+@use './variables.scss' as *;
+@use './mixins' as *;
+@use './breakpoints.scss' as *;
+
+.btn {
+	@include font($font-family-secondary, $font-weight-medium);
+
+	cursor: pointer;
+	border-radius: $rounded;
+	color: $text;
+	background-color: $primary;
+	border: 1px solid $primary;
+	transition: color 300ms ease-in-out, border-color 300ms ease-in-out,
+		background-color 300ms ease-in-out;
+
+	&-large {
+		font-size: $f-8;
+		width: 22rem;
+		padding: 1.1rem 0;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+
+		@include nonhover {
+			background-color: $primary;
+		}
+	}
+
+	&-medium {
+		font-size: $f-9;
+		width: 15rem;
+		padding: 0.8rem 0;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+
+		@media only screen and (hover: none) {
+			background-color: $primary;
+		}
+	}
+
+	&-small {
+		font-size: $f-10;
+		width: 12rem;
+		padding: 0.6rem 0;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: $text;
+		}
+
+		&:active,
+		&:focus {
+			background-color: lighten($primary-light, 30%);
+			color: $text;
+			border-color: lighten($primary-light, 30%);
+		}
+
+		@media only screen and (hover: none) {
+			background-color: $primary;
+			color: $light;
+		}
+	}
+
+	&-outline {
+		background-color: transparent;
+		border-color: $primary;
+
+		&:hover,
+		&:focus {
+			background-color: $primary;
+		}
+
+		@media only screen and (hover: none) {
+			background-color: transparent;
+		}
+	}
+
+	&-block {
+		padding: 0.5rem 0;
+		width: $base-width;
+		font-size: $f-8;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+
+		@media only screen and (hover: none) {
+			background-color: $primary;
+		}
+	}
+
+	&-round {
+		border: none;
+		background-color: transparent;
+		color: $primary;
+		font-size: $f-4;
+		padding: $p-1;
+		border-radius: $rounded;
+	}
+}

@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints.scss' as *;
+
+.skills {
+	background-color: $bg-secondary;
+	padding: $p-3;
+
+	@include md {
+		padding: $p-4 * 2 0;
+	}
+}

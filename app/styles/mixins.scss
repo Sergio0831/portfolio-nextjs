@@ -1,0 +1,125 @@
+@use './variables' as *;
+
+// Typografy
+@mixin font($font-family, $font-weight, $font-size: null) {
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height-base;
+}
+
+// Layout
+@mixin centered-flex(
+	$flex-direction: null,
+	$justify-content: null,
+	$align-items: null,
+	$flex-wrap: null
+) {
+	display: $d-flex;
+	flex-direction: $flex-direction;
+	align-items: $align-items;
+	justify-content: $justify-content;
+	flex-wrap: $flex-wrap;
+}
+
+@mixin centered-grid($justify-content) {
+	display: $d-grid;
+	align-items: $align-center;
+	justify-content: $justify-content;
+}
+
+@mixin transform($X: null, $Y: null) {
+	transform: translate($X, $Y);
+}
+
+@mixin centered {
+	@include absolute($top: 50%, $left: 50%);
+	@include transform($Y: -50%, $X: -50%);
+}
+
+// Width Height 100%
+@mixin wh {
+	width: $base-width;
+	height: $base-height;
+}
+
+// Position
+@mixin position(
+	$position,
+	$top: null,
+	$right: null,
+	$bottom: null,
+	$left: null
+) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin absolute($args...) {
+	@include position($p-absolute, $args...);
+}
+
+@mixin relative($args...) {
+	@include position($p-relative, $args...);
+}
+
+@mixin fixed($args...) {
+	@include position($p-fixed, $args...);
+}
+
+// Child selectors
+@mixin first-child {
+	&:first-of-type {
+		@content;
+	}
+}
+
+@mixin nth-child($num) {
+	&:nth-child(#{$num}n) {
+		@content;
+	}
+}
+
+@mixin last-child {
+	&:last-of-type {
+		@content;
+	}
+}
+
+@mixin not-last-child {
+	&:not(:last-child) {
+		@content;
+	}
+}
+
+@mixin transition-delay-up {
+	@for $i from 1 through 5 {
+		@include nth-child(#{$i}) {
+			transition-delay: #{$i * 0.2}s;
+		}
+	}
+}
+
+@mixin transition-delay-down {
+	@for $i from 1 through 5 {
+		@include nth-child(#{$i}) {
+			transition-delay: #{450 - (100 * $i)}ms;
+		}
+	}
+}
+
+// Shadows
+@mixin shadow {
+	box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 15%);
+}
+
+@mixin card-shadow-1 {
+	box-shadow: 0 3rem 6rem rgb(0 0 0 / 25%);
+}
+
+@mixin card-shadow-2 {
+	box-shadow: 0 2rem 4rem rgb(0 0 0 / 15%);
+}

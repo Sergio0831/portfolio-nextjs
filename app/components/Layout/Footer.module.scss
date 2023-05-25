@@ -1,0 +1,32 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+	background-color: $primary;
+	padding: $p-3 0;
+	text-align: $align-center;
+
+	&__copyright {
+		@include font($font-family-primary, $font-weight-medium, $f-8);
+
+		color: $text;
+	}
+}
+
+.social_icons {
+	a {
+		outline: none;
+	}
+
+	a:hover svg,
+	a:focus svg {
+		fill: $secondary;
+	}
+
+	svg {
+		width: 4rem;
+		height: 4rem;
+		fill: $text;
+		transition: fill $transition;
+	}
+}

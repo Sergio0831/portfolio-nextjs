@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.arrow {
+	@include position(absolute, $top: 0);
+
+	background-color: lighten($primary-light, 30%);
+	transition: background-color $transition;
+	width: 5rem;
+	height: 5rem;
+
+	&:hover {
+		background-color: lighten($primary-light, 10%);
+	}
+
+	svg {
+		@include wh;
+		fill: darken($primary-light, 20%);
+	}
+
+	&__next {
+		right: 1rem;
+
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__prev {
+		right: 7rem;
+	}
+}
