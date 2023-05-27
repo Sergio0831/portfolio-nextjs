@@ -3,6 +3,7 @@ import Header from './components/Layout/Header';
 const About = dynamic(() => import('./components/Sections/About'));
 const Projects = dynamic(() => import('./components/Sections/Projects'));
 const Skills = dynamic(() => import('./components/Sections/Skills'));
+const Contact = dynamic(() => import('./components/Sections/Contact'));
 
 export const metadata = {
 	title: 'Home | Sergejs Ivcenko',
@@ -19,6 +20,7 @@ const Home = () => {
 				<About />
 				<Projects />
 				<Skills />
+				<Contact />
 			</main>
 		</>
 	);

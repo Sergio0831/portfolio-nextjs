@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.contact {
+	padding: $p-3;
+
+	@include md {
+		padding: $p-4 * 2 0;
+	}
+}

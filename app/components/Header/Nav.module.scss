@@ -49,6 +49,10 @@
 			color: $light;
 		}
 
+		&:focus {
+			@include outline;
+		}
+
 		@media only screen and (hover: none) {
 			transform: translateX(0);
 

@@ -8,18 +8,22 @@
 	cursor: pointer;
 	border-radius: $rounded;
 	color: $text;
+	padding: $p-1 0;
 	background-color: $primary;
 	border: 1px solid $primary;
 	transition: color 300ms ease-in-out, border-color 300ms ease-in-out,
 		background-color 300ms ease-in-out;
 
+	&:focus-visible {
+		@include outline;
+	}
+
 	&-large {
 		font-size: $f-8;
 		width: 22rem;
-		padding: 1.1rem 0;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: transparent;
 		}
 
@@ -31,10 +35,9 @@
 	&-medium {
 		font-size: $f-9;
 		width: 15rem;
-		padding: 0.8rem 0;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: transparent;
 		}
 
@@ -46,16 +49,14 @@
 	&-small {
 		font-size: $f-10;
 		width: 12rem;
-		padding: 0.6rem 0;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: transparent;
-			color: $text;
 		}
 
 		&:active,
-		&:focus {
+		&:focus-visible {
 			background-color: lighten($primary-light, 30%);
 			color: $text;
 			border-color: lighten($primary-light, 30%);
@@ -72,7 +73,7 @@
 		border-color: $primary;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: $primary;
 		}
 
@@ -82,12 +83,12 @@
 	}
 
 	&-block {
-		padding: 0.5rem 0;
 		width: $base-width;
 		font-size: $f-8;
+		outline: none;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: transparent;
 		}
 
@@ -103,5 +104,11 @@
 		font-size: $f-4;
 		padding: $p-1;
 		border-radius: $rounded;
+	}
+
+	&:disabled {
+		background-color: lighten($primary-light, 40%);
+		border-color: lighten($primary-light, 40%);
+		color: rgba($text, 0.5);
 	}
 }

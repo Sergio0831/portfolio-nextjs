@@ -24,7 +24,7 @@
 		}
 
 		&:hover::before,
-		&:focus::before {
+		&:focus-visible::before {
 			transform: scaleX(1);
 			transform-origin: bottom left;
 		}

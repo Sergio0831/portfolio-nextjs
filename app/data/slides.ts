@@ -49,6 +49,22 @@ export const slides = [
 		title: 'WP',
 	},
 	{
+		icon: 'framer',
+		title: 'Framer',
+	},
+	{
+		icon: 'prisma',
+		title: 'Prisma',
+	},
+	{
+		icon: 'figma',
+		title: 'Figma',
+	},
+	{
+		icon: 'vscode',
+		title: 'Vscode',
+	},
+	{
 		icon: 'github',
 		title: 'GITHUB',
 	},

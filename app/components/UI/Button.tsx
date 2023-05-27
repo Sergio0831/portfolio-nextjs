@@ -1,8 +1,10 @@
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 type ButtonProps = {
 	type: 'button' | 'submit' | 'reset' | undefined;
 	className?: string;
+	name: string;
 	children?: React.ReactNode;
 	large?: boolean;
 	small?: boolean;
@@ -10,7 +12,9 @@ type ButtonProps = {
 	block?: boolean;
 	round?: boolean;
 	rest?: Object;
-	handleClick?: React.MouseEventHandler<HTMLButtonElement>;
+	disabled?: boolean;
+	ariaLabel: string;
+	handleClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 const Button = ({
@@ -19,10 +23,13 @@ const Button = ({
 	children,
 	large,
 	small,
+	name,
 	outline,
 	block,
 	round,
 	handleClick,
+	ariaLabel,
+	disabled,
 }: ButtonProps) => {
 	const classes = clsx(
 		{
@@ -32,14 +39,24 @@ const Button = ({
 			'btn-outline': outline,
 			'btn-block': block,
 			'btn-round': round,
+			'btn-disabled': disabled,
 		},
 		className,
 	);
 
 	return (
-		<button className={classes} type={type} onClick={handleClick}>
+		<motion.button
+			className={classes}
+			type={type}
+			disabled={disabled}
+			onClick={handleClick}
+			name={name}
+			whileTap={{ scale: 0.95 }}
+			transition={{ duration: 0.1 }}
+			aria-label={ariaLabel}
+		>
 			{children}
-		</button>
+		</motion.button>
 	);
 };
 

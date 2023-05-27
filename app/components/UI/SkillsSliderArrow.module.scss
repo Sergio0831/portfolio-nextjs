@@ -8,8 +8,10 @@
 	transition: background-color $transition;
 	width: 5rem;
 	height: 5rem;
+	display: $d-flex;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: lighten($primary-light, 10%);
 	}
 

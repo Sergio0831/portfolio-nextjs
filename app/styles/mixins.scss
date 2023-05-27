@@ -123,3 +123,11 @@
 @mixin card-shadow-2 {
 	box-shadow: 0 2rem 4rem rgb(0 0 0 / 15%);
 }
+
+// Outline
+@mixin outline {
+	outline-color: darken($secondary, 10%);
+	outline-style: dashed;
+	outline-offset: 3px;
+	outline-width: 2px;
+}

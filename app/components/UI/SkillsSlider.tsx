@@ -3,14 +3,13 @@
 import { slides } from '@/data/slides';
 import classes from './SkillsSlider.module.scss';
 import Slider from 'react-slick';
-//import 'slick-carousel/slick/slick.scss';
 import '../../styles/slick-slider.scss';
 import { SkillsSliderArrow } from './SkillsSliderArrow';
 
 const SkillsSlider = () => {
 	const settings = {
 		slidesToShow: 6,
-		infinite: false,
+		infinite: true,
 		slidesToScroll: 2,
 		nextArrow: <SkillsSliderArrow type='next' />,
 		prevArrow: <SkillsSliderArrow type='prev' />,

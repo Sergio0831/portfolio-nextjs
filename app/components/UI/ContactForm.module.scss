@@ -1,0 +1,138 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints.scss' as *;
+
+.form {
+	max-width: 50rem;
+	background-color: $light;
+	margin: $m-6 auto;
+	padding: $p-5 $p-5 $p-4;
+	border-radius: $rounded;
+	text-align: $align-center;
+	position: $p-relative;
+
+	@include md {
+		max-width: 60rem;
+	}
+
+	&__group {
+		text-align: left;
+		margin-bottom: $m-4;
+		position: $p-relative;
+	}
+
+	&__label {
+		@include font($font-family-primary, $font-weight-medium, $f-8);
+		transform: translateY(-3.3rem) scale(1);
+
+		position: $p-absolute;
+		transform-origin: 0 0;
+		display: $d-block;
+		pointer-events: none;
+		transition: color 0.3s ease, transform 0.3s ease;
+		cursor: text;
+	}
+
+	&__input {
+		@include font($font-family-primary, $font-weight-medium, $f-8);
+
+		padding-bottom: 0.5rem;
+		border: none;
+		border-bottom: 1px solid $text;
+		background: none;
+		width: $base-width;
+		transition: border-bottom 0.3s ease, outline 0.3s ease,
+			caret-color 0.3s ease;
+
+		&:valid {
+			border-bottom: 1px solid $primary-darken;
+			outline: none;
+			caret-color: $primary-darken;
+
+			& + label {
+				color: $primary-darken;
+				transform: translateY(-6rem) scale(0.8);
+			}
+		}
+
+		&:focus:invalid {
+			border-bottom: 1px solid $secondary-darken;
+			outline: none;
+			caret-color: $secondary-darken;
+
+			& + label {
+				color: $secondary-darken;
+				transform: translateY(-6rem) scale(0.8);
+			}
+		}
+
+		&[type='email']:focus:invalid {
+			border-bottom: 1px solid $secondary-darken;
+			outline: none;
+
+			& + label {
+				color: $secondary-darken;
+				transform: translateY(-6rem) scale(0.8);
+			}
+		}
+
+		&[type='email']::placeholder {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&[type='email']:not(:placeholder-shown) {
+			border-bottom: 1px solid $secondary-darken;
+			outline: none;
+			caret-color: $secondary-darken;
+
+			& + label {
+				color: $secondary-darken;
+				transform: translateY(-6rem) scale(0.8);
+			}
+		}
+
+		&[type='email']:valid {
+			border-bottom: 1px solid $primary-darken;
+			outline: none;
+			caret-color: $primary-darken;
+
+			& + label {
+				color: $primary-darken;
+				transform: translateY(-6rem) scale(0.8);
+			}
+		}
+	}
+
+	textarea {
+		resize: none;
+
+		& + label {
+			transform: translateY(-14.3rem) scale(1);
+		}
+
+		&:focus:invalid {
+			border-bottom: 1px solid $secondary-darken;
+			outline: none;
+
+			& + label {
+				color: $secondary-darken;
+				transform: translateY(-17rem) scale(0.8);
+			}
+		}
+
+		&:valid {
+			border-bottom: 1px solid $primary-darken;
+			outline: none;
+
+			& + label {
+				color: $primary-darken;
+				transform: translateY(-17rem) scale(0.8);
+			}
+		}
+	}
+
+	button[type='submit'] {
+		margin-bottom: $m-2;
+	}
+}

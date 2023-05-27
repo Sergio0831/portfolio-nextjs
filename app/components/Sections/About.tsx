@@ -9,6 +9,7 @@ const About = () => {
 	return (
 		<Section
 			id='about'
+			name='about'
 			title='About Me'
 			subtitle="Let me tell you who I'm."
 			className={classes.about}

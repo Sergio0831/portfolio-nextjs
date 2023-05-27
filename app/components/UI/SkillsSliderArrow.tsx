@@ -6,12 +6,16 @@ import classes from './SkillsSliderArrow.module.scss';
 
 type SkillsSliderArrowsProps = {
 	type: 'prev' | 'next';
+	disableNext?: boolean;
+	disablePrev?: boolean;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export const SkillsSliderArrow = ({
 	onClick,
 	type,
+	disableNext,
+	disablePrev,
 }: SkillsSliderArrowsProps) => {
 	const buttonClasses = clsx({
 		[classes.arrow]: true,
@@ -23,9 +27,11 @@ export const SkillsSliderArrow = ({
 		<Button
 			round
 			className={buttonClasses}
-			aria-label={type === 'next' ? 'Next Slide' : 'Prev Slide'}
+			ariaLabel={type === 'next' ? 'Next Slide' : 'Prev Slide'}
+			disabled={type === 'next' ? disableNext : disablePrev}
 			type='button'
 			handleClick={onClick}
+			name={type === 'next' ? 'Next' : 'Prev'}
 		>
 			<svg>
 				<use xlinkHref='/images/sprite.svg#icon-chevron'></use>

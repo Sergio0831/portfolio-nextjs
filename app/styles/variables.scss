@@ -1,7 +1,9 @@
 // Colors
 $primary: #00bfb8;
+$primary-darken: darken($primary, 15%);
 $primary-light: #27debf;
 $secondary: #ec813a;
+$secondary-darken: darken($secondary, 20%);
 $text: #3a3c3f;
 $bg-primary: #efede4;
 $bg-secondary: #f0f5f8;
@@ -26,7 +28,6 @@ $f-10: $f-base * 1.4;
 $font-family-primary: var(--font-family-primary);
 $font-family-secondary: var(--font-family-secondary);
 $font-family-logo: var(--font-family-logo);
-
 // Font Weight
 $font-weight-regular: 400;
 $font-weight-medium: 500;
