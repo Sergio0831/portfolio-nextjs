@@ -20,7 +20,8 @@ const modalVariants = {
 		},
 	},
 	exit: {
-		scale: 0,
+		opacity: 0,
+		scale: 0.8,
 		transition: {
 			duration: 0.5,
 			ease: 'easeInOut',

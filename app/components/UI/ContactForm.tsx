@@ -4,6 +4,7 @@ import useForm from '@/hooks/useForm';
 import classes from './ContactForm.module.scss';
 import Button from './Button';
 import Modal from './Modal';
+import { AnimatePresence } from 'framer-motion';
 
 const ContactForm = () => {
 	const {
@@ -19,12 +20,15 @@ const ContactForm = () => {
 
 	return (
 		<form className={classes.form} onSubmit={handleSubmit}>
-			{isModalOpen && (
-				<Modal
-					message={message}
-					type={messageState === 'error' ? 'error' : 'success'}
-				/>
-			)}
+			<AnimatePresence initial={false} key='modal'>
+				{isModalOpen && (
+					<Modal
+						message={message}
+						type={messageState === 'error' ? 'error' : 'success'}
+						key='modal'
+					/>
+				)}
+			</AnimatePresence>
 			<div className={classes.form__group}>
 				<input
 					type='name'
