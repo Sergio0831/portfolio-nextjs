@@ -3,8 +3,7 @@
 import useForm from '@/hooks/useForm';
 import classes from './ContactForm.module.scss';
 import Button from './Button';
-
-type ContactFormProps = {};
+import Modal from './Modal';
 
 const ContactForm = () => {
 	const {
@@ -12,14 +11,20 @@ const ContactForm = () => {
 		message,
 		handleChange,
 		clearForm,
-		closeModal,
 		isModalOpen,
 		handleSubmit,
+		messageState,
+		isLoading,
 	} = useForm();
 
 	return (
 		<form className={classes.form} onSubmit={handleSubmit}>
-			{/* {isModalOpen && <Modal message={message} closeModal={closeModal} />} */}
+			{isModalOpen && (
+				<Modal
+					message={message}
+					type={messageState === 'error' ? 'error' : 'success'}
+				/>
+			)}
 			<div className={classes.form__group}>
 				<input
 					type='name'
@@ -78,7 +83,13 @@ const ContactForm = () => {
 					Message
 				</label>
 			</div>
-			<Button name='send' type='submit' block ariaLabel='Send Email'>
+			<Button
+				name='send'
+				type='submit'
+				block
+				ariaLabel='Send Email'
+				disabled={isLoading}
+			>
 				Send
 			</Button>
 			<Button

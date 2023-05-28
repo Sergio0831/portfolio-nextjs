@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.modal {
+	@include position($p-absolute, $top: -5rem, $left: 0, $right: 0);
+	color: $light;
+	padding: $p-1 0;
+	border-radius: $rounded;
+
+	p {
+		@include font($font-family-primary, $font-weight-medium, $f-7);
+	}
+
+	&__success {
+		background-color: $primary-darken;
+	}
+
+	&__error {
+		background-color: $secondary-darken;
+	}
+}

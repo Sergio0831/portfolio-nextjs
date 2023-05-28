@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type FormFields = {
 	name: string;
@@ -19,6 +19,8 @@ export const sendEmail = async (data: FormFields): Promise<FormFields> =>
 
 const useForm = () => {
 	const [message, setMessage] = useState<string>('');
+	const [messageState, setMessageState] = useState<string>('');
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [values, setValues] = useState<FormFields>({
 		name: '',
@@ -35,6 +37,7 @@ const useForm = () => {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		setIsLoading(true);
 		try {
 			await sendEmail(values);
 			setValues({
@@ -45,14 +48,14 @@ const useForm = () => {
 			});
 			setMessage('Thank you for contacting me.');
 			setIsModalOpen(true);
+			setMessageState('succes');
+			setIsLoading(false);
 		} catch (error: any) {
 			setIsModalOpen(true);
 			setMessage(error.message);
+			setMessageState('error');
+			setIsLoading(false);
 		}
-	};
-
-	const closeModal = () => {
-		setIsModalOpen(false);
 	};
 
 	const clearForm = () => {
@@ -64,6 +67,16 @@ const useForm = () => {
 		});
 	};
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsModalOpen(false);
+		}, 4000);
+
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [isModalOpen]);
+
 	return {
 		message,
 		isModalOpen,
@@ -71,8 +84,9 @@ const useForm = () => {
 		handleChange,
 		clearForm,
 		handleSubmit,
-		closeModal,
 		values,
+		messageState,
+		isLoading,
 	};
 };
 
