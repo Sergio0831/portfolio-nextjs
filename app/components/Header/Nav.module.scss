@@ -43,13 +43,13 @@
 		box-shadow: inset 0 0 0 0 $secondary;
 
 		&:hover:not(.active),
-		&:focus {
+		&:focus-visible {
 			transform: translateX(1rem);
 			box-shadow: inset 35rem 0 0 0 $secondary;
 			color: $light;
 		}
 
-		&:focus {
+		&:focus-visible {
 			@include outline;
 		}
 

@@ -26,7 +26,7 @@ const Section = ({
 	return (
 		<section className={sectionClasses} id={id}>
 			<h2 className={classes.section__title}>{title}</h2>
-			<p className={classes.section__subtitle}>{subtitle}</p>
+			<h3 className={classes.section__subtitle}>{subtitle}</h3>
 			<div className={classes.section__center}>{children}</div>
 		</section>
 	);

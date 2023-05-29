@@ -45,14 +45,15 @@
 	}
 
 	&__me {
+		h4 {
+			@include font($font-family-secondary, $font-weight-medium, $f-6);
+			line-height: 1.6;
+		}
+
 		p {
 			@include font($font-family-secondary, $font-weight-medium, $f-8);
 
 			line-height: 1.6;
-		}
-
-		p:first-child {
-			font-size: $f-6;
 		}
 	}
 

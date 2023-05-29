@@ -26,7 +26,7 @@ const About = () => {
 				</div>
 
 				<div className={classes.about__me}>
-					<p> Hi there!</p>
+					<h4> Hi there!</h4>
 					<p>
 						I&apos;m a passionate Front End Web Developer with experience in
 						building websites and writing code. Before starting a career in web

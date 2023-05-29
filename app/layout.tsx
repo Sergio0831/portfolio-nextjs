@@ -1,5 +1,6 @@
-import Logo from './components/Header/Logo';
+import Head from 'next/head';
 import Footer from './components/Layout/Footer';
+import Header from './components/Layout/Header';
 import './styles/globals.scss';
 import localFont from 'next/font/local';
 
@@ -61,7 +62,7 @@ export default function RootLayout({
 			<body
 				className={`${greatVibes.variable} ${roboto.variable} ${montserrat.variable}`}
 			>
-				<Logo />
+				<Header />
 				{children}
 				<Footer />
 			</body>

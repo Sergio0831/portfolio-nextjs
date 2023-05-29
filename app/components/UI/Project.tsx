@@ -16,15 +16,17 @@ const Project = ({
 	return (
 		<>
 			<Link href={`/projects/${slug}`} className={classes.project}>
-				<Image
-					alt={title}
-					className={classes.project__image}
-					src={imageFront}
-					placeholder='empty'
-					fill={true}
-					priority={true}
-					sizes='(max-width: 960px) 100vw, 50vw'
-				/>
+				<div className={classes.project__image}>
+					<Image
+						alt=''
+						src={imageFront}
+						placeholder='empty'
+						fill={true}
+						priority={true}
+						sizes='(max-width: 960px) 30vw, 50vw'
+					/>
+				</div>
+
 				<div className={classes.project__overlay}>
 					<div className={classes.project__desc}>
 						<h3 className={classes.project__title}>{title}</h3>

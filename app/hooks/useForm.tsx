@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 type FormFields = {
 	name: string;
@@ -7,19 +7,34 @@ type FormFields = {
 	message: string;
 };
 
-export const sendEmail = async (data: FormFields): Promise<FormFields> =>
-	fetch('/api/sendEmail', {
+export const sendEmail = async ({
+	name,
+	email,
+	subject,
+	message,
+}: FormFields): Promise<FormFields> => {
+	const response = await fetch('/api/sendEmail', {
 		method: 'POST',
-		body: JSON.stringify(data),
+		body: JSON.stringify({ name, email, subject, message }),
 		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-	}).then((res) => {
-		if (!res.ok) throw new Error('Failed to send message');
-		return res.json();
 	});
+
+	if (!response.ok) {
+		throw new Error('Failed to send message');
+	}
+
+	return response.json();
+};
 
 const useForm = () => {
 	const [message, setMessage] = useState<string>('');
-	const [messageState, setMessageState] = useState<string>('');
+	const [messageInfo, setMessageInfo] = useState<{
+		info: string;
+		type: string;
+	}>({
+		info: '',
+		type: '',
+	});
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [values, setValues] = useState<FormFields>({
@@ -29,43 +44,51 @@ const useForm = () => {
 		message: '',
 	});
 
-	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-	): void => {
-		setValues({ ...values, [e.target.name]: e.target.value });
-	};
+	const handleChange = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+			setValues((prevValues) => ({
+				...prevValues,
+				[e.target.name]: e.target.value,
+			}));
+		},
+		[],
+	);
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setIsLoading(true);
-		try {
-			await sendEmail(values);
-			setValues({
-				name: '',
-				email: '',
-				subject: '',
-				message: '',
-			});
-			setMessage('Thank you for contacting me.');
-			setIsModalOpen(true);
-			setMessageState('succes');
-			setIsLoading(false);
-		} catch (error: any) {
-			setIsModalOpen(true);
-			setMessage(error.message);
-			setMessageState('error');
-			setIsLoading(false);
-		}
-	};
+	const handleSubmit = useCallback(
+		async (e: React.FormEvent) => {
+			e.preventDefault();
+			setIsLoading(true);
+			try {
+				await sendEmail(values);
+				setValues({
+					name: '',
+					email: '',
+					subject: '',
+					message: '',
+				});
+				setMessageInfo({
+					info: 'Thank you for contacting me.',
+					type: 'success',
+				});
+				setIsModalOpen(true);
+				setIsLoading(false);
+			} catch (error: any) {
+				setIsModalOpen(true);
+				setMessageInfo({ info: error.message, type: 'error' });
+				setIsLoading(false);
+			}
+		},
+		[values],
+	);
 
-	const clearForm = () => {
+	const clearForm = useCallback(() => {
 		setValues({
 			name: '',
 			email: '',
 			subject: '',
 			message: '',
 		});
-	};
+	}, []);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -78,14 +101,14 @@ const useForm = () => {
 	}, [isModalOpen]);
 
 	return {
-		message,
+		message: messageInfo.info,
 		isModalOpen,
 		setIsModalOpen,
 		handleChange,
 		clearForm,
 		handleSubmit,
 		values,
-		messageState,
+		messageType: messageInfo.type,
 		isLoading,
 	};
 };

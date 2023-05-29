@@ -12,7 +12,7 @@ const InfoCard = ({ icon, title, description }: InfoCardProps) => {
 			<svg className={classes.card__icon}>
 				<use xlinkHref={`/images/sprite.svg#icon-${icon}`}></use>
 			</svg>
-			<h3 className={classes.card__title}>{title}</h3>
+			<h4 className={classes.card__title}>{title}</h4>
 			<p className={classes.card__desc}>{description}</p>
 		</article>
 	);

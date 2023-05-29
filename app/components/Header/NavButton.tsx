@@ -24,9 +24,9 @@ const NavButton = () => {
 			className={classes.navigation__button}
 			onClick={handleButtonClick}
 		>
-			<div className={navigationClasses}>&nbsp;</div>
-			<div className={navigationClasses}>&nbsp;</div>
-			<div className={navigationClasses}>&nbsp;</div>
+			<span className={navigationClasses}>&nbsp;</span>
+			<span className={navigationClasses}>&nbsp;</span>
+			<span className={navigationClasses}>&nbsp;</span>
 			&nbsp;
 		</button>
 	);

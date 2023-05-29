@@ -14,7 +14,7 @@ const ContactForm = () => {
 		clearForm,
 		isModalOpen,
 		handleSubmit,
-		messageState,
+		messageType,
 		isLoading,
 	} = useForm();
 
@@ -24,14 +24,14 @@ const ContactForm = () => {
 				{isModalOpen && (
 					<Modal
 						message={message}
-						type={messageState === 'error' ? 'error' : 'success'}
+						type={messageType === 'error' ? 'error' : 'success'}
 						key='modal'
 					/>
 				)}
 			</AnimatePresence>
 			<div className={classes.form__group}>
 				<input
-					type='name'
+					type='text'
 					id='name'
 					className={classes.form__input}
 					name='name'

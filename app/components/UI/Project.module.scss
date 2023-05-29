@@ -8,13 +8,18 @@
 	overflow: hidden;
 	outline: none;
 	grid-column: span 6;
-	//padding-bottom: 56.2%; /* 16:9 aspect ratio */
-	aspect-ratio: calc(4 / 3);
-	width: $base-width;
+
 	transition: box-shadow $transition;
 	border-radius: $rounded;
 
 	@include card-shadow-2;
+
+	&__image {
+		position: $p-relative;
+		width: $base-width;
+		padding-bottom: calc(3 / 4 * 100%); // aspect-ratio 4/3
+		//aspect-ratio: calc(4 / 3);
+	}
 
 	&__link {
 		position: $p-absolute;
