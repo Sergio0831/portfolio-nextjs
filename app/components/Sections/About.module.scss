@@ -4,7 +4,6 @@
 
 .about {
 	background-color: $bg-secondary;
-	padding: $p-3 0;
 
 	@include md {
 		padding: $p-4 * 2 0;

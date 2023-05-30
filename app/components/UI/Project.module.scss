@@ -16,7 +16,8 @@
 
 	&__image {
 		position: $p-relative;
-		width: $base-width;
+		//width: $base-width;
+		//height: 45rem;
 		padding-bottom: calc(3 / 4 * 100%); // aspect-ratio 4/3
 		//aspect-ratio: calc(4 / 3);
 	}

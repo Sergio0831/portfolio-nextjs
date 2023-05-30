@@ -6,6 +6,6 @@ number: 8
 github: https://github.com/Sergio0831/audiophile-ecommerce-website
 demo: https://audiophile-ivcenko.vercel.app/
 tags: ['NextJs', 'TypeScript', 'GraphQL', 'SASS', 'Prisma']
-imageFront: '/images/front/audiophile.png'
+imageFront: '/images/front/audiophile.jpg'
 imageSingleProject: '/images/single-page/audiophile.png'
 ---

@@ -35,12 +35,12 @@ const Hero = () => {
 			</div>
 			<div className={classes.hero__image}>
 				<Image
-					src='/images/myportrait.jpg'
+					src='/images/portrait.jpg'
 					alt='Sergejs Ivcenko'
 					placeholder='empty'
 					fill={true}
 					priority={true}
-					sizes='(max-width: 768px) 10vw, (max-width: 1200px) 15vw, 20vw'
+					sizes='(min-width: 960px) 50vw, (min-width: 480px) 50vw, 100vw'
 				/>
 			</div>
 		</section>

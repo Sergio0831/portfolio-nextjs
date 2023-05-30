@@ -1,5 +1,6 @@
 @use './variables' as *;
 @use './breakpoints' as *;
+@use './mixins.scss' as *;
 @use './button.scss' as *;
 
 * {
@@ -39,6 +40,12 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
+}
+
+label,
+input,
+textarea {
+	@include font($font-family-primary, $font-weight-medium, $f-8);
 }
 
 // input.text,

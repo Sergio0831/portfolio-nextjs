@@ -3,7 +3,6 @@
 @use '../../styles/breakpoints' as *;
 
 .projects {
-	padding: $p-3;
 	text-align: $align-center;
 
 	@include md {

@@ -5,11 +5,14 @@
 .form {
 	max-width: 50rem;
 	background-color: $light;
-	margin: $m-6 auto;
-	padding: $p-5 $p-5 $p-4;
+	margin: 0 auto;
+	padding: $p-3 $p-3 $p-2;
 	border-radius: $rounded;
-	text-align: $align-center;
 	position: $p-relative;
+
+	@include sm {
+		padding: $p-5 $p-5 $p-4;
+	}
 
 	@include md {
 		max-width: 60rem;
@@ -17,25 +20,22 @@
 
 	&__group {
 		text-align: left;
-		margin-bottom: $m-4;
+		margin: 0 0 $m-4 0;
 		position: $p-relative;
 	}
 
 	&__label {
-		@include font($font-family-primary, $font-weight-medium, $f-8);
 		transform: translateY(-3.3rem) scale(1);
 
 		position: $p-absolute;
 		transform-origin: 0 0;
 		display: $d-block;
 		pointer-events: none;
-		transition: color 0.3s ease, transform 0.3s ease;
+		transition: color $transition, transform $transition;
 		cursor: text;
 	}
 
 	&__input {
-		@include font($font-family-primary, $font-weight-medium, $f-8);
-
 		padding-bottom: 0.5rem;
 		border: none;
 		border-bottom: 1px solid $text;

@@ -49,7 +49,7 @@ const ContactForm = () => {
 					id='email'
 					className={classes.form__input}
 					name='email'
-					pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+					pattern='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 					placeholder='Email'
 					value={values.email}
 					onChange={handleChange}

@@ -3,10 +3,10 @@
 @use '../../styles/breakpoints' as *;
 
 .section {
-	// padding-bottom: $p-6;
+	padding: $p-3 0;
 
 	&__title {
-		@include font($font-family-primary, $font-weight-semi-bold, $f-base * 4);
+		@include font($font-family-primary, $font-weight-semi-bold, $f-4);
 		text-align: $align-center;
 		position: $p-relative;
 		margin-bottom: 3px;
@@ -28,12 +28,12 @@
 	}
 
 	&__subtitle {
-		@include font($font-family-secondary, $font-weight-regular, $f-5);
+		@include font($font-family-secondary, $font-weight-regular, $f-8);
 		text-align: $align-center;
-		margin-bottom: $m-4;
+		margin: 0 0 $m-4 0;
 
-		@include lg {
-			margin-bottom: $m-4 * 2;
+		@include sm {
+			font-size: $f-5;
 		}
 	}
 

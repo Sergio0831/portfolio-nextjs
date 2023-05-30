@@ -22,8 +22,8 @@ const Project = ({
 						src={imageFront}
 						placeholder='empty'
 						fill={true}
-						priority={true}
-						sizes='(max-width: 960px) 30vw, 50vw'
+						loading='lazy'
+						sizes='(min-width: 960px) 50vw, (min-width: 480px) 50vw, 100vw'
 					/>
 				</div>
 

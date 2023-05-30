@@ -9,7 +9,6 @@
 	);
 
 	flex-direction: column-reverse;
-	width: $base-width;
 	padding: $p-4 $p-5 0;
 	height: 70vh;
 	background-image: url(../../../public/images/home-bg.svg);
@@ -33,7 +32,6 @@
 
 		@include sm {
 			font-size: $f-1;
-			line-height: 7.8rem;
 		}
 	}
 
@@ -78,7 +76,8 @@
 		height: 30rem;
 		position: $p-relative;
 		margin-bottom: $m-4;
-		border-radius: 1rem;
+		border-radius: $rounded;
+		border: 2px solid $secondary;
 		overflow: hidden;
 		transform: rotate(5deg);
 		@include card-shadow-1;
@@ -102,7 +101,7 @@
 		}
 
 		@include lg {
-			margin-bottom: 0;
+			margin: 0;
 		}
 	}
 
