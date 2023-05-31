@@ -11,7 +11,6 @@ type ButtonProps = {
 	outline?: boolean;
 	block?: boolean;
 	round?: boolean;
-	rest?: Object;
 	disabled?: boolean;
 	ariaLabel: string;
 	handleClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
@@ -51,7 +50,7 @@ const Button = ({
 			disabled={disabled}
 			onClick={handleClick}
 			name={name}
-			whileTap={{ scale: 0.95 }}
+			whileTap={!disabled ? { scale: 0.95 } : undefined}
 			transition={{ duration: 0.1 }}
 			aria-label={ariaLabel}
 		>

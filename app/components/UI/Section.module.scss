@@ -6,7 +6,7 @@
 	padding: $p-3 0;
 
 	&__title {
-		@include font($font-family-primary, $font-weight-semi-bold, $f-4);
+		font-size: $f-4;
 		text-align: $align-center;
 		position: $p-relative;
 		margin-bottom: 3px;
@@ -28,7 +28,7 @@
 	}
 
 	&__subtitle {
-		@include font($font-family-secondary, $font-weight-regular, $f-8);
+		font-size: $f-8;
 		text-align: $align-center;
 		margin: 0 0 $m-4 0;
 

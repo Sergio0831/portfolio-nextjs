@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
 import './styles/globals.scss';
@@ -23,27 +22,12 @@ const roboto = localFont({
 			weight: '500',
 			style: 'normal',
 		},
-		{
-			path: '../public/font/Roboto-Bold.woff2',
-			weight: '700',
-			style: 'normal',
-		},
 	],
 });
 
 const montserrat = localFont({
 	variable: '--font-family-primary',
 	src: [
-		{
-			path: '../public/font/Montserrat-Regular.woff2',
-			weight: '400',
-			style: 'normal',
-		},
-		{
-			path: '../public/font/Montserrat-Medium.woff2',
-			weight: '500',
-			style: 'normal',
-		},
 		{
 			path: '../public/font/Montserrat-SemiBold.woff2',
 			weight: '600',

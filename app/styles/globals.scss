@@ -26,6 +26,7 @@ html {
 body {
 	color: $text;
 	background-color: $bg-primary;
+	line-height: 1.6;
 }
 
 img {
@@ -45,19 +46,32 @@ a {
 label,
 input,
 textarea {
-	@include font($font-family-primary, $font-weight-medium, $f-8);
+	@include font($font-family-secondary, $font-weight-regular, $f-8);
 }
 
-// input.text,
-// input[type='text'],
-// input[type='button'],
-// input[type='submit'],
-// .input-checkbox {
-// 	appearance: none;
-// 	-webkit-appearance: none;
-// 	-webkit-border-radius: 0;
-// 	border-radius: 0;
-// }
+h2,
+h4 {
+	font-family: $font-family-primary;
+	font-weight: $font-weight-semi-bold;
+}
+
+h3,
+p {
+	font-family: $font-family-secondary;
+	font-weight: $font-weight-regular;
+}
+
+input.text,
+input[type='text'],
+input[type='button'],
+input[type='submit'],
+.input-checkbox {
+	appearance: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
 .disable-scroll {
 	overflow: hidden;
 }

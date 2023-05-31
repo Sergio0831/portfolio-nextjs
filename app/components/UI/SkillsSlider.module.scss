@@ -23,7 +23,7 @@
 	}
 
 	p {
-		@include font($font-family-primary, $font-weight-semi-bold, $f-10);
+		font-size: $f-9;
 		color: $light;
 		letter-spacing: 1px;
 	}

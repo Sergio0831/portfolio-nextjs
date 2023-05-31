@@ -45,14 +45,12 @@
 
 	&__me {
 		h4 {
-			@include font($font-family-secondary, $font-weight-medium, $f-6);
-			line-height: 1.6;
+			font-size: $f-6;
 		}
 
 		p {
-			@include font($font-family-secondary, $font-weight-medium, $f-8);
-
-			line-height: 1.6;
+			font-size: $f-8;
+			font-weight: $font-weight-medium;
 		}
 	}
 

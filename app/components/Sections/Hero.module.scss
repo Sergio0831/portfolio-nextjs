@@ -27,7 +27,7 @@
 	}
 
 	&__heading {
-		@include font($font-family-primary, $font-weight-semi-bold, $f-base * 4);
+		@include font($font-family-primary, $font-weight-semi-bold, $f-4);
 		line-height: 1.2;
 
 		@include sm {
@@ -36,7 +36,7 @@
 	}
 
 	&__subheading {
-		@include font($font-family-secondary, $font-weight-regular, $f-4);
+		@include font($font-family-secondary, $font-weight-regular, $f-5);
 		margin-bottom: $m-2;
 
 		@include sm {
@@ -76,7 +76,7 @@
 		height: 30rem;
 		position: $p-relative;
 		margin-bottom: $m-4;
-		border-radius: $rounded;
+		border-radius: $rounded * 2;
 		border: 2px solid $secondary;
 		overflow: hidden;
 		transform: rotate(5deg);
@@ -107,6 +107,6 @@
 
 	@include lg {
 		flex-direction: row;
-		column-gap: $g-4 * 2;
+		column-gap: $g-8;
 	}
 }

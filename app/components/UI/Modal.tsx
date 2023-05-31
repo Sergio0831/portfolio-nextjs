@@ -11,10 +11,12 @@ const modalVariants = {
 	hidden: {
 		opacity: 0,
 		scale: 0.8,
+		translateX: '-300%',
 	},
 	visible: {
 		opacity: 1,
 		scale: 1,
+		translateX: '-50%',
 		transition: {
 			duration: 0.5,
 		},
@@ -22,6 +24,7 @@ const modalVariants = {
 	exit: {
 		opacity: 0,
 		scale: 0.8,
+		translateX: '-300%',
 		transition: {
 			duration: 0.5,
 			ease: 'easeInOut',

@@ -16,10 +16,7 @@
 
 	&__image {
 		position: $p-relative;
-		//width: $base-width;
-		//height: 45rem;
 		padding-bottom: calc(3 / 4 * 100%); // aspect-ratio 4/3
-		//aspect-ratio: calc(4 / 3);
 	}
 
 	&__link {
@@ -53,7 +50,7 @@
 	}
 
 	&__title {
-		@include font($font-family-primary, $font-weight-bold, $f-7);
+		font-size: $f-7;
 	}
 
 	&__tech {
@@ -65,7 +62,7 @@
 	}
 
 	&__tags {
-		@include font($font-family-primary, $font-weight-regular, $f-9);
+		font-size: $f-9;
 	}
 
 	&__icon {

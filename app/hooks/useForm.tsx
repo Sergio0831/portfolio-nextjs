@@ -27,7 +27,6 @@ export const sendEmail = async ({
 };
 
 const useForm = () => {
-	const [message, setMessage] = useState<string>('');
 	const [messageInfo, setMessageInfo] = useState<{
 		info: string;
 		type: string;
@@ -93,7 +92,7 @@ const useForm = () => {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setIsModalOpen(false);
-		}, 4000);
+		}, 3000);
 
 		return () => {
 			clearTimeout(timer);

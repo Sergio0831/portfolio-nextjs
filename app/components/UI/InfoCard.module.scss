@@ -18,8 +18,7 @@
 	}
 
 	&__title {
-		@include font($font-family-primary, $font-weight-semi-bold, $f-8);
-
+		font-size: $f-8;
 		position: $p-relative;
 		padding-bottom: math.div($p-1, 2);
 		display: $d-flex;
@@ -38,7 +37,7 @@
 	}
 
 	&__desc {
-		@include font($font-family-secondary, $font-weight-regular, $f-9);
+		font-size: $f-9;
 		text-align: left;
 	}
 

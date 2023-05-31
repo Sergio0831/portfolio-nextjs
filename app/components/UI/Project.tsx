@@ -3,19 +3,16 @@ import classes from './Project.module.scss';
 import { ProjectProps } from '@/types/types';
 import Image from 'next/image';
 
-const Project = ({
-	id,
-	slug,
-	imageFront,
-	newProject,
-	tags,
-	title,
-}: ProjectProps) => {
+const Project = ({ slug, imageFront, tags, title }: ProjectProps) => {
 	const tag = tags.map((tag) => tag).join(', ');
 
 	return (
 		<>
-			<Link href={`/projects/${slug}`} className={classes.project}>
+			<Link
+				href={`/projects/${slug}`}
+				className={classes.project}
+				prefetch={false}
+			>
 				<div className={classes.project__image}>
 					<Image
 						alt=''
