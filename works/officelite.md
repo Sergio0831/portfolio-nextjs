@@ -6,6 +6,6 @@ number: 5
 github: https://github.com/Sergio0831/officelite-coming-soon-site
 demo: https://officelite.netlify.app/
 tags: ['React', 'SASS']
-imageFront: '/images/front/officelite.png'
+imageFront: '/images/front/officelite.jpg'
 imageSingleProject: '/images/single-page/officelite.png'
 ---

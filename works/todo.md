@@ -7,5 +7,5 @@ github: https://github.com/Sergio0831/react-todo-app
 demo: https://react-todo-ivcenko.netlify.app/
 tags: ['React', 'Styled Components']
 imageFront: '/images/front/todo.jpg'
-imageSingleProject: '/images/single-page/todo.png'
+imageSingleProject: '/images/single-page/todo.jpg'
 ---

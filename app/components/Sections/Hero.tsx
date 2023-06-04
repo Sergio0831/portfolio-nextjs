@@ -40,7 +40,7 @@ const Hero = () => {
 					placeholder='empty'
 					fill={true}
 					priority={true}
-					sizes='(min-width: 960px) 50vw, (min-width: 480px) 50vw, 100vw'
+					sizes='(max-width: 480px) 50vw, (max-width: 960px) 50vw, 30vw'
 				/>
 			</div>
 		</section>

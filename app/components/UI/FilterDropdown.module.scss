@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.dropdown {
+	width: 27rem;
+	position: $p-relative;
+	margin: 0 auto $m-3;
+	@include font($font-family-secondary, $font-weight-regular, $f-7);
+
+	&__header,
+	&__body {
+		background-color: $white;
+		border: 2px solid $secondary;
+		border-radius: $rounded;
+	}
+
+	&__header,
+	&__item {
+		cursor: pointer;
+		padding: $p-1 1.4rem;
+		font: inherit;
+
+		&:focus-visible {
+			outline: none;
+			background-color: $light-darken;
+		}
+	}
+
+	&__header,
+	&__body,
+	&__item {
+		width: $base-width;
+	}
+
+	&__header {
+		margin-bottom: $m-1;
+
+		@include centered-flex(
+			$justify-content: $justify-between,
+			$align-items: $align-center
+		);
+	}
+
+	&__body {
+		position: $p-absolute;
+		z-index: 2;
+		clip-path: inset(10% 50% 90% 50% round 5px);
+		height: 35rem;
+		overflow-y: scroll;
+	}
+
+	&__item {
+		border: none;
+		text-align: start;
+		background-color: transparent;
+		transition: background-color $transition;
+
+		@include hover {
+			background-color: $light-darken;
+		}
+	}
+
+	&__icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+}
+
+.selected {
+	background-color: $light-darken;
+}

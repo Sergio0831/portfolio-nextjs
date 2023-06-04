@@ -5,4 +5,5 @@ export type ProjectProps = {
 	newProject: boolean;
 	tags: string[];
 	imageFront: string;
+	number: number;
 };

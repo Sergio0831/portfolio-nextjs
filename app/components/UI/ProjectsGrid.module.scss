@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints' as *;
+
+.projects__grid {
+	display: $d-grid;
+	margin-bottom: $m-4;
+	gap: $g-2;
+
+	@include lg {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-bottom: $m-4 * 2;
+	}
+}

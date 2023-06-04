@@ -76,6 +76,10 @@ input[type='submit'],
 	overflow: hidden;
 }
 
+.pt {
+	padding-top: 16rem;
+}
+
 ::selection {
 	color: $light;
 	background-color: $secondary;

@@ -12,15 +12,4 @@
 	@include lg {
 		padding-top: $p-5 * 5;
 	}
-
-	&__grid {
-		display: $d-grid;
-		margin-bottom: $m-4;
-		gap: $g-2;
-
-		@include lg {
-			grid-template-columns: repeat(12, minmax(0, 1fr));
-			margin-bottom: $m-4 * 2;
-		}
-	}
 }

@@ -1,11 +1,14 @@
+'use client';
+
 import clsx from 'clsx';
 import classes from './Section.module.scss';
+import { usePathname } from 'next/navigation';
 
 export type SectionProps = {
-	id: string;
+	id?: string;
 	title: string;
 	subtitle: string;
-	className: string;
+	className?: string;
 	children: React.ReactNode;
 };
 
@@ -16,9 +19,12 @@ const Section = ({
 	children,
 	className,
 }: SectionProps) => {
+	const pathname = usePathname();
+
 	const sectionClasses = clsx(
 		{
 			[classes.section]: true,
+			[classes.section__projects]: pathname === '/projects',
 		},
 		className,
 	);

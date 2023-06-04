@@ -6,6 +6,6 @@ number: 1
 github: https://github.com/Sergio0831/digital_media
 demo: https://digital-media.netlify.app/
 tags: ['Bootstrap', 'CSS']
-imageFront: '/images/front/digital-media.png'
+imageFront: '/images/front/digital-media.jpg'
 imageSingleProject: '/images/single-page/digital-media.png'
 ---

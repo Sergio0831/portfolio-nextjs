@@ -8,6 +8,7 @@ $text: #3a3c3f;
 $bg-primary: #efede4;
 $bg-secondary: #f0f5f8;
 $light: #f7f7f7;
+$light-darken: darken($light, 10%);
 $white: #fff;
 $gradient: linear-gradient(-45deg, #7b42f6, #b01eff);
 

@@ -1,8 +1,8 @@
 import Section from '../UI/Section';
 import classes from './Projects.module.scss';
-import Project from '../UI/Project';
 import { getProjects } from '@/utilities/getProjects';
 import Link from 'next/link';
+import ProjectsGrid from '../UI/ProjectsGrid';
 
 const Projects = () => {
 	const projects = getProjects().filter((project) => project.newProject);
@@ -14,10 +14,7 @@ const Projects = () => {
 			title='My Projects'
 			subtitle='Check out of some my projects...'
 		>
-			<div className={classes.projects__grid}>
-				{projects &&
-					projects.map((project) => <Project key={project.id} {...project} />)}
-			</div>
+			<ProjectsGrid projects={projects} />
 
 			<Link href='/projects' className='btn btn-large'>
 				All Projects

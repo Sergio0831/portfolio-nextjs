@@ -20,7 +20,7 @@ const Project = ({ slug, imageFront, tags, title }: ProjectProps) => {
 						placeholder='empty'
 						fill={true}
 						loading='lazy'
-						sizes='(min-width: 960px) 50vw, (min-width: 480px) 50vw, 100vw'
+						sizes='(max-width: 960px) 100vw, (max-width: 960px) 100vw, 50vw'
 					/>
 				</div>
 

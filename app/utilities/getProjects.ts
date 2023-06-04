@@ -14,6 +14,7 @@ export const getProjects = (): ProjectProps[] => {
 		return {
 			slug: fileName.replace('.md', ''),
 			id: index,
+			number: data.number,
 			title: data.title,
 			newProject: data.new,
 			tags: data.tags,

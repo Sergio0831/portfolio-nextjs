@@ -131,3 +131,12 @@
 	outline-offset: 3px;
 	outline-width: 2px;
 }
+
+// Disable hover on mobile
+@mixin hover {
+	@media (any-hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}

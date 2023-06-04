@@ -4,7 +4,7 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		deviceSizes: [480, 960],
+		deviceSizes: [320, 480, 720, 960, 1200, 1440],
 		formats: ['image/avif', 'image/webp'],
 	},
 };
