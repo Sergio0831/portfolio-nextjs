@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { ProjectProps } from '@/types/types';
+import { ProjectFront } from '@/types/types';
 
-export const getProjects = (): ProjectProps[] => {
+export const getProjects = (): ProjectFront[] => {
 	const folder = path.join(process.cwd(), 'works');
 	const files = fs.readdirSync(folder);
 

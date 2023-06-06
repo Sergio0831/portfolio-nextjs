@@ -7,7 +7,12 @@ import Link from 'next/link';
 const Logo = () => {
 	return (
 		<h1 className={classes.logo}>
-			<Link href={'/'} rel='noopener noreferrer' aria-label='Logo'>
+			<Link
+				href={'/'}
+				rel='noopener noreferrer'
+				prefetch={false}
+				aria-label='Logo'
+			>
 				Sergejs
 			</Link>
 		</h1>

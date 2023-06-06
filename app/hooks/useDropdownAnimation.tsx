@@ -1,14 +1,14 @@
 import { stagger, useAnimate } from 'framer-motion';
 import { useEffect } from 'react';
 
-const staggerDropdownItems = stagger(0.08, { startDelay: 0.08 });
+const staggerDropdownItems = stagger(0.08, { startDelay: 0.1 });
 
 export const useDropdownAnimation = (isOpen: boolean) => {
 	const [scope, animate] = useAnimate();
 
 	useEffect(() => {
 		// Animate icon
-		animate('svg', { rotate: isOpen ? -180 : 0 }, { duration: 0.2 });
+		animate('svg', { rotate: isOpen ? 0 : -180 }, { duration: 0.2 });
 
 		// Animate dropdown body
 		animate(
@@ -25,11 +25,20 @@ export const useDropdownAnimation = (isOpen: boolean) => {
 			},
 		);
 
+		// Animate dropdown item
 		animate(
 			'li',
 			isOpen
-				? { opacity: 1, scale: 1, filter: 'blur(0px)' }
-				: { opacity: 0, scale: 0.3, filter: 'blur(20px)' },
+				? {
+						opacity: 1,
+						scale: 1,
+						filter: 'blur(0px)',
+				  }
+				: {
+						opacity: 0,
+						scale: 0.3,
+						filter: 'blur(20px)',
+				  },
 			{
 				duration: 0.2,
 				delay: isOpen ? staggerDropdownItems : 0,

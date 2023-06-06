@@ -16,7 +16,7 @@ const Projects = () => {
 		>
 			<ProjectsGrid projects={projects} />
 
-			<Link href='/projects' className='btn btn-large'>
+			<Link href='/projects' className='btn btn-large' prefetch={false}>
 				All Projects
 			</Link>
 		</Section>

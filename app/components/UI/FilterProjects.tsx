@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import FilterDropdown from './FilterDropdown';
 import ProjectsGrid from './ProjectsGrid';
-import { ProjectProps } from '@/types/types';
+import { ProjectFront } from '@/types/types';
 
 type FilterProjectsProps = {
-	projects: ProjectProps[];
+	projects: ProjectFront[];
 };
 
 const FilterProjects = ({ projects }: FilterProjectsProps) => {

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import classes from './Project.module.scss';
-import { ProjectProps } from '@/types/types';
+import { ProjectFront } from '@/types/types';
 import Image from 'next/image';
 
-const Project = ({ slug, imageFront, tags, title }: ProjectProps) => {
+const Project = ({ slug, imageFront, tags, title }: ProjectFront) => {
 	const tag = tags.map((tag) => tag).join(', ');
 
 	return (

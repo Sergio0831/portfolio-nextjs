@@ -41,22 +41,13 @@
 		text-align: left;
 	}
 
-	&:hover {
+	@include hover {
 		background-color: $primary;
 
 		@include card-shadow-1;
 
 		.card__title::before {
 			background-color: $white;
-		}
-	}
-
-	@include nonhover {
-		background-color: $light;
-		color: $text;
-
-		.card__title::before {
-			background-color: $primary;
 		}
 	}
 }

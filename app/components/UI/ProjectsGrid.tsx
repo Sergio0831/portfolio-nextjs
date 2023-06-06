@@ -1,9 +1,9 @@
-import { ProjectProps } from '@/types/types';
+import { ProjectFront } from '@/types/types';
 import Project from './Project';
 import classes from './ProjectsGrid.module.scss';
 
 type ProjectsGridProps = {
-	projects: ProjectProps[];
+	projects: ProjectFront[];
 };
 
 const ProjectsGrid = ({ projects }: ProjectsGridProps) => {

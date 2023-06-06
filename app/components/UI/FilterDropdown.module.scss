@@ -19,6 +19,7 @@
 		cursor: pointer;
 		padding: $p-1 1.4rem;
 		font: inherit;
+		color: inherit;
 
 		&:focus-visible {
 			outline: none;
@@ -39,6 +40,12 @@
 			$justify-content: $justify-between,
 			$align-items: $align-center
 		);
+
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			fill: $text;
+		}
 	}
 
 	&__body {
@@ -47,6 +54,10 @@
 		clip-path: inset(10% 50% 90% 50% round 5px);
 		height: 35rem;
 		overflow-y: scroll;
+	}
+
+	li {
+		transform-origin: -20px 50%;
 	}
 
 	&__item {
@@ -58,11 +69,6 @@
 		@include hover {
 			background-color: $light-darken;
 		}
-	}
-
-	&__icon {
-		width: 1.5rem;
-		height: 1.5rem;
 	}
 }
 
