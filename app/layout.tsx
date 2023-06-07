@@ -7,6 +7,7 @@ const greatVibes = localFont({
 	src: '../public/font/GreatVibes-Regular.woff2',
 	display: 'swap',
 	variable: '--font-family-logo',
+	preload: true,
 });
 
 const roboto = localFont({
@@ -23,17 +24,14 @@ const roboto = localFont({
 			style: 'normal',
 		},
 	],
+	preload: true,
 });
 
 const montserrat = localFont({
 	variable: '--font-family-primary',
-	src: [
-		{
-			path: '../public/font/Montserrat-SemiBold.woff2',
-			weight: '600',
-			style: 'normal',
-		},
-	],
+	src: '../public/font/Montserrat-SemiBold.woff2',
+	display: 'swap',
+	preload: true,
 });
 
 export default function RootLayout({

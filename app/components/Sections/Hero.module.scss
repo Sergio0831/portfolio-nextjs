@@ -11,8 +11,7 @@
 	flex-direction: column-reverse;
 	padding: 0 $p-4;
 	height: 70vh;
-	background-image: url(../../../public/images/home-bg.svg);
-	background-size: cover;
+	background: url(../../../public/images/home-bg.svg) no-repeat center;
 
 	@include sm {
 		height: 75vh;

@@ -1,0 +1,114 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints.scss' as *;
+
+.project {
+	padding: $p-6 * 2 0 $p-5;
+
+	&__back {
+		margin-left: $m-3;
+		width: 5rem;
+		height: 5rem;
+		padding: 1rem;
+		background-color: $primary-light;
+		transform: rotate(180deg);
+		border-radius: $rounded;
+		transition: background-color $transition;
+
+		@include hover {
+			background-color: $primary;
+		}
+
+		&:focus-visible {
+			@include outline;
+		}
+
+		svg {
+			fill: $text;
+			width: $base-width;
+			height: $base-height;
+		}
+	}
+
+	&__content {
+		margin: $m-4 0;
+
+		@include lg {
+			display: $d-grid;
+			grid-template-columns: 2fr 1fr;
+		}
+	}
+
+	&__description {
+		margin-bottom: $m-2;
+		font-size: $f-7;
+
+		@include lg {
+			margin-bottom: 0;
+		}
+	}
+
+	&__links {
+		justify-self: $justify-start;
+		@include font($font-family-secondary, $font-weight-regular);
+
+		@include lg {
+			justify-self: $justify-end;
+		}
+	}
+
+	&__github,
+	&__demo {
+		display: inline-flex;
+		align-items: center;
+		column-gap: 8px;
+
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&:focus-visible {
+			@include outline;
+		}
+	}
+
+	&__github {
+		font-size: $f-7;
+		padding-bottom: 5px;
+		border-bottom: 1px solid $primary;
+		transition: border-color $transition;
+
+		&:before {
+			margin-right: 8px;
+			transition: color $transition;
+		}
+
+		@include hover {
+			border-color: $secondary;
+
+			svg {
+				fill: $secondary;
+			}
+		}
+	}
+
+	&__demo {
+		margin-left: $m-3;
+		font-size: $f-9;
+		padding: 5px 1.5rem;
+		border: 1px solid $primary-light;
+		border-radius: $rounded;
+		transition: border-color $transition, background-color $transition;
+
+		@include hover {
+			border-color: $primary-light;
+			background-color: $primary-light;
+		}
+	}
+
+	&__img {
+		position: $p-relative;
+		aspect-ratio: 16 / 9;
+	}
+}

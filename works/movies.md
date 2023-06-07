@@ -7,5 +7,5 @@ github: https://github.com/Sergio0831/movies-web-app
 demo: https://entertainment-app-ivcenko.vercel.app/
 tags: ['NextJs', 'TypeScript', 'SASS', 'Prisma']
 imageFront: '/images/front/movies.jpg'
-imageSingleProject: '/images/single-page/movies.png'
+imageSingleProject: '/images/single-page/movies.jpg'
 ---

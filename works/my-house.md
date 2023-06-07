@@ -7,5 +7,5 @@ github: https://github.com/Sergio0831/my-house
 demo: https://my-house.netlify.app/
 tags: ['JavaScript', 'SASS']
 imageFront: '/images/front/my-house.jpg'
-imageSingleProject: '/images/single-page/my-house.png'
+imageSingleProject: '/images/single-page/my-house.jpg'
 ---

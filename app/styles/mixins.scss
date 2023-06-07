@@ -126,7 +126,7 @@
 
 // Outline
 @mixin outline {
-	outline-color: darken($secondary, 10%);
+	outline-color: $secondary-darken;
 	outline-style: dashed;
 	outline-offset: 3px;
 	outline-width: 2px;

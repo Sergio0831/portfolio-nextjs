@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { Link } from 'react-scroll';
 import classes from './Hero.module.scss';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Hero = () => {
 	return (
@@ -11,7 +11,7 @@ const Hero = () => {
 				<h2 className={classes.hero__heading}>Sergejs Ivcenko</h2>
 				<h3 className={classes.hero__subheading}>Front-End Web Developer</h3>
 				<div className={classes.hero__links}>
-					<Link
+					<ScrollLink
 						className='btn btn-medium'
 						smooth={true}
 						duration={500}
@@ -20,7 +20,7 @@ const Hero = () => {
 						tabIndex={0}
 					>
 						Contact Me
-					</Link>
+					</ScrollLink>
 					<a
 						className='btn btn-medium btn-outline'
 						href='/Sergejs_Ivcenko_CV.pdf'

@@ -18,9 +18,10 @@ const Project = ({ slug, imageFront, tags, title }: ProjectFront) => {
 						alt=''
 						src={imageFront}
 						placeholder='empty'
-						fill={true}
 						loading='lazy'
-						sizes='(max-width: 960px) 100vw, (max-width: 960px) 100vw, 50vw'
+						fill={true}
+						sizes='(max-width: 960px) 100vw
+						, 50vw'
 					/>
 				</div>
 

@@ -7,5 +7,5 @@ github: https://github.com/Sergio0831/natours
 demo: https://tours-nature.netlify.app/
 tags: ['JavaScript', 'SASS']
 imageFront: '/images/front/natours.jpg'
-imageSingleProject: '/images/single-page/natours.png'
+imageSingleProject: '/images/single-page/natours.jpg'
 ---

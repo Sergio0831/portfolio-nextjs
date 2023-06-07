@@ -7,5 +7,5 @@ github: https://github.com/Sergio0831/officelite-coming-soon-site
 demo: https://photosnap-ivcenko.netlify.app/
 tags: ['React', 'TypeScript', 'SASS']
 imageFront: '/images/front/photosnap.jpg'
-imageSingleProject: '/images/single-page/photosnap.png'
+imageSingleProject: '/images/single-page/photosnap.jpg'
 ---

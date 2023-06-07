@@ -1,3 +1,5 @@
+'use client';
+
 import ContactForm from '../UI/ContactForm';
 import Section from '../UI/Section';
 import classes from './Contact.module.scss';

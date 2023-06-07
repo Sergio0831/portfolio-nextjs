@@ -5,11 +5,9 @@ import classes from './Nav.module.scss';
 import { useMenuState } from '@/context/MenuContext';
 import navLinks from '@/data/nav-links';
 import { Link as ScrollLink, scroller } from 'react-scroll';
-import { useEffect, useRef } from 'react';
 
 const Nav = () => {
 	const { handleCloseMenu, isOpen } = useMenuState();
-	const linkRef = useRef<HTMLAnchorElement>(null);
 	const navItemClasses = clsx({
 		[classes.nav__item]: true,
 		[classes.in]: isOpen,
@@ -47,7 +45,6 @@ const Nav = () => {
 								duration={500}
 								spy={true}
 								to={href}
-								tabIndex={isOpen ? 0 : -1}
 							>
 								{href}
 							</ScrollLink>
