@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import classes from './About.module.scss';
 import infoCards from '@/data/info-cards';
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
+import { url } from '@/data/blurDataUrl';
 const Section = dynamic(() => import('../UI/Section'));
 const InfoCard = dynamic(() => import('../UI/InfoCard'));
 
@@ -18,7 +22,8 @@ const About = () => {
 					<Image
 						src='/images/coding.svg'
 						alt='Coder'
-						placeholder='empty'
+						placeholder='blur'
+						blurDataURL={url}
 						fill={true}
 						loading='lazy'
 						sizes='(min-width: 960px) 50vw, (min-width: 480px) 50vw, 100vw'
@@ -53,17 +58,18 @@ const About = () => {
 				</div>
 			</div>
 
-			<div className={classes.about__cards}>
+			<motion.div className={classes.about__cards}>
 				{infoCards &&
-					infoCards.map((card) => (
+					infoCards.map((card, index) => (
 						<InfoCard
 							key={card.id}
 							icon={card.icon}
 							title={card.title}
 							description={card.description}
+							index={index}
 						/>
 					))}
-			</div>
+			</motion.div>
 		</Section>
 	);
 };

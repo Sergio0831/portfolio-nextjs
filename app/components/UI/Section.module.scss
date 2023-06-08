@@ -5,11 +5,38 @@
 .section {
 	padding: $p-3 0;
 
+	&__back {
+		width: 5rem;
+		height: 5rem;
+		padding: 1rem;
+		margin: 0 0 1rem 0;
+		background-color: $primary-light;
+		transform: rotate(180deg);
+		border-radius: $rounded;
+		transition: background-color $transition;
+
+		@include hover {
+			background-color: $primary;
+		}
+
+		&:focus-visible {
+			@include outline;
+		}
+
+		svg {
+			fill: $text;
+			width: $base-width;
+			height: $base-height;
+		}
+	}
+
 	&__title {
-		font-size: $f-4;
+		font-size: $f-7 * 2;
 		text-align: $align-center;
 		position: $p-relative;
-		margin-bottom: 3px;
+		margin-bottom: 5px;
+		padding-bottom: 1rem;
+		line-height: 1.2;
 
 		&::before {
 			content: '';
@@ -28,7 +55,7 @@
 	}
 
 	&__subtitle {
-		font-size: $f-8;
+		font-size: $f-7;
 		text-align: $align-center;
 		margin: 0 0 $m-4 0;
 
@@ -39,9 +66,8 @@
 
 	&__center {
 		max-width: 120rem;
+		width: 90%;
 		margin: 0 auto;
-		padding-left: $p-3;
-		padding-right: $p-3;
 	}
 
 	&__projects {

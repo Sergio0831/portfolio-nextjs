@@ -2,6 +2,7 @@ import Link from 'next/link';
 import classes from './Project.module.scss';
 import { ProjectFront } from '@/types/types';
 import Image from 'next/image';
+import { url } from '@/data/blurDataUrl';
 
 const Project = ({ slug, imageFront, tags, title }: ProjectFront) => {
 	const tag = tags.map((tag) => tag).join(', ');
@@ -17,7 +18,8 @@ const Project = ({ slug, imageFront, tags, title }: ProjectFront) => {
 					<Image
 						alt=''
 						src={imageFront}
-						placeholder='empty'
+						placeholder='blur'
+						blurDataURL={url}
 						loading='lazy'
 						fill={true}
 						sizes='(max-width: 960px) 100vw

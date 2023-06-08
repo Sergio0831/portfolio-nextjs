@@ -8,20 +8,24 @@ export const useDropdownAnimation = (isOpen: boolean) => {
 
 	useEffect(() => {
 		// Animate icon
-		animate('svg', { rotate: isOpen ? 0 : -180 }, { duration: 0.2 });
+		animate(
+			'svg',
+			{ rotate: isOpen ? 0 : -180 },
+			{ duration: 0.2, delay: isOpen ? 0 : 0.6 },
+		);
 
 		// Animate dropdown body
 		animate(
 			'ul',
 			{
-				clipPath: isOpen
-					? 'inset(-1% -1% -1% -1% round 5px)'
-					: 'inset(10% 50% 90% 50% round 5px)',
+				height: isOpen ? '35rem' : '0',
+				opacity: isOpen ? 1 : 0,
 			},
 			{
 				type: 'spring',
 				bounce: 0,
 				duration: 0.5,
+				delay: isOpen ? 0 : 0.6,
 			},
 		);
 
@@ -41,7 +45,7 @@ export const useDropdownAnimation = (isOpen: boolean) => {
 				  },
 			{
 				duration: 0.2,
-				delay: isOpen ? staggerDropdownItems : 0,
+				delay: staggerDropdownItems,
 			},
 		);
 	}, [isOpen, animate]);

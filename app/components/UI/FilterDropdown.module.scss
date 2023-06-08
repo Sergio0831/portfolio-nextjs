@@ -51,7 +51,6 @@
 	&__body {
 		position: $p-absolute;
 		z-index: 2;
-		clip-path: inset(10% 50% 90% 50% round 5px);
 		height: 35rem;
 		overflow-y: scroll;
 	}

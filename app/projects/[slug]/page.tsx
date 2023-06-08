@@ -6,6 +6,7 @@ import Section from '@/components/UI/Section';
 import Link from 'next/link';
 import classes from './page.module.scss';
 import Image from 'next/image';
+import { url } from '@/data/blurDataUrl';
 
 const getProject = (slug: string): ProjectSingle => {
 	const folder = path.join(process.cwd(), 'works');
@@ -34,16 +35,6 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
 		getProject(slug);
 	return (
 		<main className={classes.project}>
-			<Link
-				href={'/projects'}
-				className={classes.project__back}
-				aria-label='Back to projects page'
-				prefetch={false}
-			>
-				<svg>
-					<use xlinkHref='/images/sprite.svg#icon-arrow'></use>
-				</svg>
-			</Link>
 			<Section title={title}>
 				<div className={classes.project__content}>
 					<p className={classes.project__description}>{description}</p>
@@ -78,7 +69,8 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
 					<Image
 						src={imageSingleProject}
 						alt={title}
-						placeholder='empty'
+						placeholder='blur'
+						blurDataURL={url}
 						fill={true}
 						loading='lazy'
 						sizes=' (max-width: 960px) 100vw, 100vw'

@@ -5,31 +5,6 @@
 .project {
 	padding: $p-6 * 2 0 $p-5;
 
-	&__back {
-		margin-left: $m-3;
-		width: 5rem;
-		height: 5rem;
-		padding: 1rem;
-		background-color: $primary-light;
-		transform: rotate(180deg);
-		border-radius: $rounded;
-		transition: background-color $transition;
-
-		@include hover {
-			background-color: $primary;
-		}
-
-		&:focus-visible {
-			@include outline;
-		}
-
-		svg {
-			fill: $text;
-			width: $base-width;
-			height: $base-height;
-		}
-	}
-
 	&__content {
 		margin: $m-4 0;
 
