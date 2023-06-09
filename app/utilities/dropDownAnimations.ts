@@ -1,18 +1,5 @@
 import { MotionProps, Variants } from 'framer-motion';
 
-export const iconVariants: MotionProps = {
-	variants: {
-		visible: (custom) => ({
-			rotate: custom,
-			transition: {
-				duration: 0.2,
-				delay: custom,
-			},
-		}),
-	},
-	animate: 'visible',
-};
-
 export const listAnimation: MotionProps = {
 	variants: {
 		hidden: {
@@ -20,6 +7,7 @@ export const listAnimation: MotionProps = {
 			opacity: 0,
 			transition: {
 				delay: 0.6,
+				staggerChildren: 0.1,
 			},
 		},
 		visible: {
@@ -34,26 +22,24 @@ export const listAnimation: MotionProps = {
 		type: 'spring',
 		bounce: 0,
 		duration: 0.5,
+		staggerChildren: 0.1,
 	},
 };
 
 export const itemsVariants: Variants = {
-	hidden: (custom: number) => ({
+	hidden: {
 		opacity: 0,
 		translateX: -20,
 		filter: 'blur(20px)',
-		transition: {
-			delay: custom,
-			duration: 0.2,
-		},
-	}),
-	visible: (custom: number) => ({
+	},
+	visible: {
 		opacity: 1,
 		translateX: 0,
 		filter: 'blur(0px)',
-		transition: {
-			delay: custom,
-			duration: 0.2,
-		},
-	}),
+	},
+	exit: {
+		opacity: 0,
+		translateX: -20,
+		filter: 'blur(20px)',
+	},
 };

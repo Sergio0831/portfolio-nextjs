@@ -7,6 +7,8 @@ import Link from 'next/link';
 import classes from './page.module.scss';
 import Image from 'next/image';
 import { url } from '@/data/blurDataUrl';
+import { Metadata } from 'next';
+import { getProjects } from '@/utilities/getProjects';
 
 const getProject = (slug: string): ProjectSingle => {
 	const folder = path.join(process.cwd(), 'works');
@@ -26,6 +28,16 @@ const getProject = (slug: string): ProjectSingle => {
 type ProjectPageProps = {
 	params: {
 		slug: string;
+	};
+};
+
+export const generateMetaData = async ({ params }: ProjectPageProps) => {
+	const slug = params.slug;
+
+	const project = getProject(slug);
+
+	return {
+		title: project.title,
 	};
 };
 

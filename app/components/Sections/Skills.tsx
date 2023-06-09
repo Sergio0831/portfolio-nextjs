@@ -1,3 +1,5 @@
+'use client';
+
 import Section from '../UI/Section';
 import classes from './Skills.module.scss';
 import SkillsSlider from '../UI/SkillsSlider';

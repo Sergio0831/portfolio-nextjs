@@ -56,14 +56,11 @@ const FilterDropdown = ({
 						animate='visible'
 						{...listAnimation}
 					>
-						{newTags.map((item, index) => (
+						{newTags.map((item) => (
 							<motion.li
 								key={item}
-								initial='hidden'
-								animate='visible'
-								exit='hidden'
 								variants={itemsVariants}
-								custom={(index + 0.5) * 0.1}
+								transition={{ duration: 0.2 }}
 							>
 								<button
 									aria-label={item}

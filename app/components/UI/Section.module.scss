@@ -41,12 +41,13 @@
 		&::before {
 			content: '';
 			margin: 0 auto;
-			position: $p-absolute;
 			width: 10rem;
 			height: 3px;
 			background-color: $primary;
 
-			@include absolute($bottom: 0, $left: 0, $right: 0);
+			@include position($p-absolute, $right: 0, $left: 0, $bottom: 0);
+			transform: scaleX(1);
+			transform-origin: bottom right;
 		}
 
 		@include sm {

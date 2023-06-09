@@ -6,6 +6,7 @@ import infoCards from '@/data/info-cards';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { url } from '@/data/blurDataUrl';
+import { container } from '@/utilities/animations';
 const Section = dynamic(() => import('../UI/Section'));
 const InfoCard = dynamic(() => import('../UI/InfoCard'));
 
@@ -58,15 +59,20 @@ const About = () => {
 				</div>
 			</div>
 
-			<motion.div className={classes.about__cards}>
+			<motion.div
+				initial={'hidden'}
+				whileInView={'show'}
+				viewport={{ once: true, amount: 0.7 }}
+				variants={container}
+				className={classes.about__cards}
+			>
 				{infoCards &&
-					infoCards.map((card, index) => (
+					infoCards.map((card) => (
 						<InfoCard
 							key={card.id}
 							icon={card.icon}
 							title={card.title}
 							description={card.description}
-							index={index}
 						/>
 					))}
 			</motion.div>

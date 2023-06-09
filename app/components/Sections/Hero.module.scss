@@ -74,7 +74,7 @@
 		width: 30rem;
 		height: 30rem;
 		position: $p-relative;
-		margin-bottom: $m-4;
+		margin: $m-5 0 $m-4;
 		border-radius: $rounded * 2;
 		border: 2px solid $secondary;
 		overflow: hidden;
@@ -95,6 +95,7 @@
 		}
 
 		@include sm {
+			margin-top: 0;
 			width: 35rem;
 			height: 35rem;
 		}

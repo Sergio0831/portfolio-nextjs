@@ -2,29 +2,17 @@
 
 import { motion } from 'framer-motion';
 import classes from './InfoCard.module.scss';
+import { fadeInUp } from '@/utilities/animations';
 
 type InfoCardProps = {
 	icon: string;
 	title: string;
 	description: string;
-	index: number;
 };
 
-const InfoCard = ({ icon, title, description, index }: InfoCardProps) => {
+const InfoCard = ({ icon, title, description }: InfoCardProps) => {
 	return (
-		<motion.article
-			className={classes.card}
-			initial={{ opacity: 0, y: 50 }}
-			whileInView={{
-				opacity: 1,
-				y: 0,
-				transition: {
-					duration: 0.8,
-					delay: 0.3 * index,
-				},
-			}}
-			viewport={{ once: true, amount: 'some', margin: '-200px' }}
-		>
+		<motion.article className={classes.card} variants={fadeInUp}>
 			<svg className={classes.card__icon}>
 				<use xlinkHref={`/images/sprite.svg#icon-${icon}`}></use>
 			</svg>
