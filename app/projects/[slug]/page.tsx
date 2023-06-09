@@ -29,6 +29,15 @@ type ProjectPageProps = {
 	};
 };
 
+export const generateMetadata = ({ params }: ProjectPageProps) => {
+	const { slug } = params;
+	const project = getProject(slug);
+
+	return {
+		title: `${project.title} | Sergejs Ivcenko Portfolio`,
+	};
+};
+
 const ProjectPage = ({ params }: ProjectPageProps) => {
 	const { slug } = params;
 	const { title, description, demo, github, imageSingleProject } =

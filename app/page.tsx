@@ -7,7 +7,7 @@ const Skills = dynamic(() => import('./components/Sections/Skills'));
 const Contact = dynamic(() => import('./components/Sections/Contact'));
 
 export const metadata: Metadata = {
-	title: 'Home | Sergejs Ivcenko',
+	title: 'Home | Sergejs Ivcenko Portfolio',
 	description: 'Sergejs Ivcenko Front-End Web Developer Portfolio',
 	keywords:
 		'web developer, nextjs, html, css, scss, front-end, javascript, angular',

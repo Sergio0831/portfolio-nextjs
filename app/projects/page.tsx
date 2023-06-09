@@ -4,7 +4,7 @@ import { getProjects } from '@/utilities/getProjects';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'Projects | Sergejs Ivcenko',
+	title: 'Projects | Sergejs Ivcenko Portfolio',
 	description: 'Explore my works',
 	keywords:
 		'react, nextjs, html, css, scss, framer-motion, figma, prisma, javascript, angular',
