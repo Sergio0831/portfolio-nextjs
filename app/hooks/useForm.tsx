@@ -16,7 +16,11 @@ export const sendEmail = async ({
 	const response = await fetch('/api/sendEmail', {
 		method: 'POST',
 		body: JSON.stringify({ name, email, subject, message }),
-		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+		headers: {
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			Accept: 'application/json',
+		},
 	});
 
 	if (!response.ok) {
